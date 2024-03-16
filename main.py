@@ -2,9 +2,9 @@ import mysql.connector
 
 baseDados = mysql.connector.connect(
   host="plesk2.server.highcloudservices.eu",
-  user="base_dados_programacao",
-  password="base_dados_programacao",
-  database="base_dados_programacao"
+  user="nop",
+  password="nop",
+  database="nop"
 )
 
 conectorBD = baseDados.cursor()
