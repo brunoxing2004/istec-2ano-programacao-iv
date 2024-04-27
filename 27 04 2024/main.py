@@ -1,4 +1,4 @@
-import higiene
+import produto
 
 p1 = Person("John", 36)
 
