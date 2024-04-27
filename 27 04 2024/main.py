@@ -1,7 +1,7 @@
-class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
+class Produto():
+  def __init__(self, descricao, preco):
+    self.descricao = descricao
+    self.preco = preco
 
 p1 = Person("John", 36)
 
