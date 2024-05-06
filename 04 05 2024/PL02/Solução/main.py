@@ -7,6 +7,7 @@ class EndIPv4:
         self._oct3 = oct3
         self._oct4 = oct4 
         self._prefixo = prefixo
+        self._classe = ""
 
     #getters
     def oct1(self):
@@ -19,6 +20,8 @@ class EndIPv4:
         return self._oct4
     def prefixo(self):
         return self._prefixo
+    def classe(self):
+        return self._classe
     
     #setters
     def oct1(self, value):
@@ -49,13 +52,14 @@ class EndIPv4:
         if 0 <= value <= 32:
             self._prefixo = value
         else:
-            raise ValueError("O prefixo deve estar entre 0 e 32")
-        
-        
-    
+            print("O prefixo deve estar entre 0 e 32, insira novo: ")
 
-    def GetClass(self):
-        primeiro_octeto = self.oct1
+        while value < 0 or 
+        
+
+
+    def GetClass():
+        primeiro_octeto = EndIPv4.oct1
         if primeiro_octeto >= 1 and primeiro_octeto <= 126:
             return "Classe A"
         elif primeiro_octeto >= 128 and primeiro_octeto <= 191:
@@ -65,19 +69,24 @@ class EndIPv4:
         elif primeiro_octeto >= 224 and primeiro_octeto <= 239:
             return "Classe D"
         elif primeiro_octeto >= 240 and primeiro_octeto <= 255:
+            EndIPv4.
             return "Classe E"
         else:
             return "Endereço inválido"
-        
-    
-    
 
-    @prefixo.setter
-    def prefixo(self, value):
-        if 0 <= value <= 32:
-            self._prefixo = value
-        else:
-            raise ValueError("O prefixo deve estar entre 0 e 32")
+        
+#sets de teste
+EndIPv4.oct1 = 257
+EndIPv4.oct2 = 168
+EndIPv4.oct3 = 1
+EndIPv4.oct4 = 1
+EndIPv4.prefixo = 24
+print (EndIPv4.GetClass())
+#print(EndIPv4.oct1) #debug
+#print(EndIPv4.oct2) #debug
+#print(EndIPv4.oct3) #debug
+#print(EndIPv4.oct4) #debug
+#print(EndIPv4.prefixo) #debug
     
 
 
