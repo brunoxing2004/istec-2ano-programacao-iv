@@ -47,5 +47,4 @@ def updateLavagem(id, matricula, data_lavagem, tipo, estado):
     print("update OK")
 
 #criacaoLavagem("92-22-AZ", datetime(2024, 5, 25, 11, 30), "Detalhada2", "estado1")
-updateLavagem("92-22-MS", datetime(2024, 5, 25, 11, 30), "Detalhada", "Agendado", 7)
-print("Ok, update")
+updateLavagem(7, "92-22-MS", datetime(2024, 5, 25, 11, 30), "Detalhada", "Agendado")
