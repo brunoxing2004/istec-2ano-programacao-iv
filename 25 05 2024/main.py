@@ -19,7 +19,7 @@ cursor = conn.cursor()
 #    print(line)
 
 # Close connection
-conn.close()
+#conn.close()
 
 
 def criacaoLavagem(matricula, data_lavagem, tipo, estado):
@@ -27,14 +27,11 @@ def criacaoLavagem(matricula, data_lavagem, tipo, estado):
     INSERT INTO lavagem (matricula, data_lavagem, tipo, estado)
     VALUES (%s, %s, %s, %s)
     """
-
-    #matricula = "92-22-MS"
-    #data_lavagem = datetime(2024, 5, 25, 11, 30)
-    #tipo = "Detalhado"
-    #estado = "Agendado"
     valores = (matricula, data_lavagem, tipo, estado)
     cursor.execute(query, valores)
+    conn.commit()
     conn.close()
+    print("criacao OK")
 
 
 def updateLavagem(id, matricula, data_lavagem, tipo, estado):
@@ -43,9 +40,12 @@ def updateLavagem(id, matricula, data_lavagem, tipo, estado):
     SET matricula = %s, data_lavagem = %s, tipo = %s, estado = %s
     WHERE id = %s
     """
-    valores = (id, matricula, data_lavagem, tipo, estado)
+    valores = (matricula, data_lavagem, tipo, estado, id)
     cursor.execute(query, valores)
+    conn.commit()
     conn.close()
+    print("update OK")
 
-updateLavagem(1, "92-22-MS", datetime(2024, 5, 25, 11, 30), "Detalhada", "Agendado")
+#criacaoLavagem("92-22-AZ", datetime(2024, 5, 25, 11, 30), "Detalhada2", "estado1")
+updateLavagem("92-22-MS", datetime(2024, 5, 25, 11, 30), "Detalhada", "Agendado", 7)
 print("Ok, update")
